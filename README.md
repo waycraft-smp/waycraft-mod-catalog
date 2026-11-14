@@ -1,13 +1,13 @@
 # Waycraft SMP — Running Mods
 
-A web-based catalog of the mods included in the Waycraft SMP setup, automatically generated using AutoMod and Modrinth metadata.
+A web-based catalog of all mods included in the Waycraft SMP modpack, automatically generated using AutoMod and Modrinth metadata.
 
 ## Project structure
 
 This project consists of two components:
 
-- **AutoMod** — A command-line tool that scans Minecraft JAR files, retrieves project information from Modrinth, and generates the mod catalog.
-- **Client** — A responsive website that displays the generated mod catalog, organized by categories and tags.
+- **AutoMod** — Scans Minecraft JAR files, retrieves project metadata from Modrinth, and generates the mod catalog.
+- **Client** — A responsive website that displays the catalog, organized by categories and tags.
 
 ---
 
@@ -18,69 +18,55 @@ A command-line tool for generating mod metadata from Minecraft JAR files.
 ## Requirements
 
 - [Node.js](https://nodejs.org/) 18 or later.
-- An internet connection to query Modrinth.
+- Internet connection.
 
 ## Installation
 
-Open the `automod` folder in PowerShell and run:
+Open the `automod` folder in PowerShell:
 
 ```powershell
 npm.cmd install
 ```
 
-This installs `adm-zip`, which is used to read metadata from `.jar` files.
-
 ## Usage
 
-Start AutoMod:
+Run AutoMod:
 
 ```powershell
 npm.cmd start
 ```
 
-Enter the path to your Minecraft mods folder when prompted.
+Enter your Minecraft mods folder when prompted. The last scanned path is saved locally in `data/last-folder.txt`. Press Enter to reuse it.
 
-The last scanned path is saved locally in `data/last-folder.txt`. Press Enter to reuse it.
-
-You can also provide the path directly:
+Alternatively, provide the path directly:
 
 ```powershell
 npm.cmd start -- "C:\path\to\mods"
 ```
 
-AutoMod scans the selected folder and its subfolders for `.jar` files, retrieves available metadata, processes tags, and generates:
+AutoMod scans the selected folder and its subfolders, retrieves available metadata, processes tags, and generates:
 
 `automod/output/mods.json`
 
 ## Output format
 
-Each object in `mods.json` can include:
+Each entry can contain:
 
 | Field | Description |
 | --- | --- |
-| `id` | Mod ID, when available. |
+| `id` | Mod ID. |
 | `name` | Project name. |
-| `description` | Project description or local JAR description. |
-| `url` | Project page or available local link. |
-| `iconUrl` | Icon URL, when available. |
-| `supportedEnvironments` | Detected supported environments. |
-| `tags` | Modrinth categories combined with manual tags. |
+| `description` | Project or local JAR description. |
+| `url` | Project page or local link. |
+| `iconUrl` | Project icon URL. |
+| `supportedEnvironments` | Detected environments. |
+| `tags` | Modrinth categories and manual tags. |
 
-### Sorting
-
-Results are ordered by environment, tags, and then ID alphabetically.
-
-Additional sorting rules:
-
-- Entries without tags appear first.
-- The `library` tag is placed near the end.
-- The `waycraft` tag is always placed last.
-
-The console summary displays the total number of entries and counts for Waycraft mods, libraries, regular mods, and entries without tags.
+Results are sorted by environment, tags, and ID. Untagged entries appear first, while `library` and `waycraft` have special sorting priority.
 
 ## Manual tags
 
-Edit `automod/data/addTagsManual.json` to assign additional tags to mods:
+Edit `automod/data/addTagsManual.json` to assign additional tags:
 
 ```json
 {
@@ -89,43 +75,35 @@ Edit `automod/data/addTagsManual.json` to assign additional tags to mods:
 }
 ```
 
-Manual tags are merged with Modrinth tags; they do not replace them.
+Manual tags are merged with Modrinth categories, not replaced by them.
 
-When a mod has no automatic tags, its ID is added with an empty list so you can assign tags manually. Existing entries are preserved.
+Available categories are based on Modrinth tags found in the catalog. `waycraft` is a custom tag for recognized Waycraft projects.
 
-### Available tags
+## Project structure
 
-Modrinth categories currently found in the mod list:
-
-`adventure`, `cursed`, `decoration`, `economy`, `equipment`, `food`, `game-mechanics`, `library`, `magic`, `management`, `minigame`, `mobs`, `optimization`, `social`, `storage`, `technology`, `transportation`, `utility`, `worldgen`.
-
-`waycraft` is a custom tag assigned to recognized Waycraft projects.
-
-## AutoMod project structure
-
-- `src/cli/` — Command-line input, console summary, and file output.
-- `src/analyzer/` — JAR reading, metadata fixes, tag merging, and sorting.
-- `src/services/` — Modrinth API requests.
+- `src/cli/` — Command-line interface and output.
+- `src/analyzer/` — JAR analysis, metadata processing, tags, and sorting.
+- `src/services/` — Modrinth API integration.
 - `data/addTagsManual.json` — Manual tags, tracked by Git.
-- `data/last-folder.txt` — Last scanned folder, ignored by Git.
-- `output/mods.json` — Generated results, ignored by Git.
+- `data/last-folder.txt` — Last scanned path, ignored by Git.
+- `output/mods.json` — Generated catalog, tracked by Git.
 
 ---
 
 # Client
 
-A responsive web application that displays the mods included in the Waycraft SMP setup.
+A responsive web application that displays the Waycraft SMP mod catalog.
 
-Categories and navigation are generated from mod tags.
+Categories and navigation are generated dynamically from mod tags.
 
 ## Requirements
 
 - [Node.js](https://nodejs.org/) 18 or later.
-- AutoMod-generated `mods.json` to populate the catalog.
+- Internet connection to retrieve the catalog from GitHub.
 
 ## Installation
 
-Open the `client` folder in PowerShell and run:
+Open the `client` folder in PowerShell:
 
 ```powershell
 npm.cmd install
@@ -139,40 +117,22 @@ Start the development server:
 npm.cmd run dev
 ```
 
-## Client project structure
+## Project structure
 
-- `src/layout/` — Server header and tag-based category navigation.
+- `src/layout/` — Header and category navigation.
 - `src/pages/runningmod/` — Mod list and cards.
-- `src/data/mods.json` — Local mod data used by the website.
-- `scripts/syncMods.js` — Synchronizes the latest AutoMod output.
-- `public/` — Site icon and other static assets.
+- `public/` — Site icon and static assets.
 
 ---
 
 # Updating the mod catalog
 
-AutoMod is the source of truth for mod metadata and tags. The client uses a local copy of its generated output.
+AutoMod generates the catalog, while the Client retrieves it directly from the public GitHub repository.
 
-Whenever the mod list needs updating, follow these steps:
+Whenever the mod list needs updating:
 
-**1. Generate the latest data**
+1. Run AutoMod to generate the latest `automod/output/mods.json`.
+2. Review the generated data.
+3. Commit and push the updated JSON file to GitHub.
 
-Navigate to `automod` and run AutoMod following the instructions above.
-
-This generates `automod/output/mods.json`.
-
-**2. Synchronize the client**
-
-Navigate to `client` and run:
-
-```powershell
-npm.cmd run sync:mods
-```
-
-This copies `automod/output/mods.json` into `client/src/data/mods.json`.
-
-**3. Commit the changes**
-
-The synchronized JSON file is part of the client project, so it must be included when committing changes.
-
-The deployed website does not need access to the AutoMod folder.
+**Important:** The generated `mods.json` must be included in your Git commits. The website retrieves the latest published version directly from GitHub, so no manual synchronization is required.
