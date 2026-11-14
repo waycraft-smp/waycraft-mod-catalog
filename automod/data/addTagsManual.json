@@ -1,0 +1,23 @@
+{
+  "aquarius_libs": ["library"],
+  "backpacked": ["storage", "decoration", "game-mechanics"],
+  "bobby": ["utility", "optimization"],
+  "cameramonitoring": ["technology", "management"],
+  "camerapture": ["utility"],
+  "catalogue": ["utility", "library"],
+  "configured": ["utility"],
+  "enhanced-cats": ["game-mechanics", "mobs", "utility"],
+  "fgirisfix": ["utility"],
+  "framework": ["library"],
+  "glassparticles": ["utility"],
+  "justenoughprofessions": ["utility"],
+  "metalbarrels": ["storage"],
+  "mint_lib": ["library"],
+  "more_enchantment_info_container": ["utility"],
+  "mtr": ["adventure", "decoration", "worldgen"],
+  "petalstem": ["decoration", "worldgen"],
+  "petdoor": ["decoration", "game-mechanics"],
+  "psithurism": ["decoration", "food", "mobs"],
+  "refurbished_furniture": ["decoration"],
+  "tonicore": ["library"]
+}
