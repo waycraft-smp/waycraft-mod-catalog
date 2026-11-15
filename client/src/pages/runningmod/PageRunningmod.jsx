@@ -94,7 +94,38 @@ export default function PageRunningmod({ selectedCategory }) {
       </header>
 
       {loading ? (
-        <div className="py-10 text-center text-sm text-slate-400">Loading mods...</div>
+        <>
+          <div className="mb-4 flex flex-wrap items-baseline justify-between gap-2">
+            <h2 className="text-lg font-semibold text-white">{activeLabel}</h2>
+            <p className="text-sm text-slate-400">
+              <span
+                aria-hidden="true"
+                className="inline-block h-4 w-20 animate-pulse rounded bg-white/10 align-middle"
+              />
+            </p>
+          </div>
+
+          <div
+            role="status"
+            aria-label="Loading mods"
+            aria-busy="true"
+            className="grid grid-cols-2 gap-6.5 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6"
+          >
+            {Array.from({ length: 12 }, (_, index) => (
+              <div
+                key={index}
+                aria-hidden="true"
+                className="relative aspect-square min-w-0 animate-pulse overflow-hidden rounded-xl bg-white/5"
+              >
+                <div className="absolute inset-0 bg-linear-to-br from-white/5 via-transparent to-black/30" />
+                <div className="absolute inset-x-0 bottom-0 space-y-2 p-3">
+                  <div className="h-3 w-3/4 rounded bg-white/15" />
+                  <div className="h-3 w-1/2 rounded bg-white/10" />
+                </div>
+              </div>
+            ))}
+          </div>
+        </>
       ) : error ? (
         <div className="rounded-xl border border-red-500/20 bg-red-500/5 px-5 py-10 text-center text-sm text-red-400">
           Unable to load the mod list. Please try again later.
@@ -112,7 +143,7 @@ export default function PageRunningmod({ selectedCategory }) {
           </div>
 
           {visibleMods.length ? (
-            <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
+            <div className="grid grid-cols-2 gap-6.5 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
               {visibleMods.map(mod => (
                 <RunningModCard key={mod.id ?? mod.name} mod={mod} />
               ))}

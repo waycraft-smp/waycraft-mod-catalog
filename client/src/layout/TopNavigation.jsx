@@ -6,10 +6,9 @@ const TopNavigation = () => (
       </div>
       <div className="ml-auto hidden flex-1 items-center justify-between px-6 text-sm text-slate-300 sm:px-10 md:flex">
         <span>Need help? Let us know in Discord #tech-support.</span>
-        <span>mc.waycraftsmp.com:36069</span>
       </div>
     </div>
   </header>
-)
+);
 
-export default TopNavigation
+export default TopNavigation;

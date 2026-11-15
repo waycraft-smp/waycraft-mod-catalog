@@ -59,10 +59,10 @@ Each entry can contain:
 | `description` | Project or local JAR description. |
 | `url` | Project page or local link. |
 | `iconUrl` | Project icon URL. |
-| `supportedEnvironments` | Detected environments. |
+| `supportedEnvironments` | Detected or manually assigned environments. |
 | `tags` | Modrinth categories and manual tags. |
 
-Results are sorted by environment, tags, and ID. Untagged entries appear first, while `library` and `waycraft` have special sorting priority.
+Results with unclassified environments appear first. Within each environment group, untagged entries appear before tagged ones; remaining entries are ordered by environment, tag priority, and ID. `library` and `waycraft` have special tag-sorting priority.
 
 ## Manual tags
 
@@ -70,8 +70,7 @@ Edit `automod/data/addTagsManual.json` to assign additional tags:
 
 ```json
 {
-  "bobby": ["utility", "optimization"],
-  "mod-id": ["my-tag", "another-tag"]
+  "bobby-mod": ["utility", "optimization"],
 }
 ```
 
@@ -79,12 +78,29 @@ Manual tags are merged with Modrinth categories, not replaced by them.
 
 Available categories are based on Modrinth tags found in the catalog. `waycraft` is a custom tag for recognized Waycraft projects.
 
+## Manual supported environments
+
+When AutoMod cannot determine a mod's environment from its JAR metadata, it keeps the mod in `output/mods.json` with `supportedEnvironments: ["unknown"]` and, when the mod has an ID, adds it to `data/addSupportedEnvironmentsManual.json` with an empty array.
+
+Fill in the array with `"client"`, `"server"`, or both, then run AutoMod again:
+
+```json
+{
+  "client-only-mod": ["client"],
+  "server-only-mod": ["server"],
+  "both-sides-mod": ["client", "server"]
+}
+```
+
+An empty array means the environment is still pending, so the mod remains in the output as `"unknown"`. Manual values apply only when the JAR metadata does not already identify an environment.
+
 ## Project structure
 
 - `src/cli/` — Command-line interface and output.
 - `src/analyzer/` — JAR analysis, metadata processing, tags, and sorting.
 - `src/services/` — Modrinth API integration.
 - `data/addTagsManual.json` — Manual tags, tracked by Git.
+- `data/addSupportedEnvironmentsManual.json` — Manual environments for mods without detectable JAR metadata.
 - `data/last-folder.txt` — Last scanned path, ignored by Git.
 - `output/mods.json` — Generated catalog, tracked by Git.
 
@@ -134,5 +150,3 @@ Whenever the mod list needs updating:
 1. Run AutoMod to generate the latest `automod/output/mods.json`.
 2. Review the generated data.
 3. Commit and push the updated JSON file to GitHub.
-
-**Important:** The generated `mods.json` must be included in your Git commits. The website retrieves the latest published version directly from GitHub, so no manual synchronization is required.
