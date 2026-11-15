@@ -1,5 +1,19 @@
 [
   {
+    "id": "skinlayers3d",
+    "name": "3D Skin Layers",
+    "description": "Render the player skin layer in 3d!",
+    "url": "https://modrinth.com/mod/3dskinlayers",
+    "iconUrl": "https://cdn.modrinth.com/data/zV5r3pPn/ff7010d4ec0275609866c8b0f603b25e25949c08_96.webp",
+    "supportedEnvironments": [
+      "client"
+    ],
+    "tags": [
+      "adventure",
+      "decoration"
+    ]
+  },
+  {
     "id": "lambdynlights",
     "name": "LambDynamicLights - Dynamic Lights",
     "description": "Adds dynamic lights to Minecraft as the most feature-complete and optimized dynamic lighting mod.",
@@ -50,6 +64,19 @@
     "description": "Reintroduces vanilla-like smooth lighting to non-full blocks (e.g. dirt paths and how they have dark shading when directly next to a full block) when using Sodium. ",
     "url": "https://modrinth.com/mod/sodium-shadowy-path-blocks",
     "iconUrl": "https://cdn.modrinth.com/data/EIa1eiMm/7ea3bc26470ba1f45b1c980d5058b033a752396b_96.webp",
+    "supportedEnvironments": [
+      "client"
+    ],
+    "tags": [
+      "decoration"
+    ]
+  },
+  {
+    "id": "waveycapes",
+    "name": "Wavey Capes",
+    "description": "The cape shouldn't be a static slab",
+    "url": "https://modrinth.com/mod/wavey-capes",
+    "iconUrl": "https://cdn.modrinth.com/data/kYuIpRLv/a51c297bdaf9685a23cc9994372fa8d45852b98b_96.webp",
     "supportedEnvironments": [
       "client"
     ],
@@ -184,6 +211,19 @@
       "mobs",
       "utility",
       "decoration"
+    ]
+  },
+  {
+    "id": "entityculling",
+    "name": "Entity Culling",
+    "description": "Using async path-tracing to hide Block-/Entities that are not visible",
+    "url": "https://modrinth.com/mod/entityculling",
+    "iconUrl": "https://cdn.modrinth.com/data/NNAgCjsB/7873452d6cede4daed12da3d7d8c193ab88b4fd6_96.webp",
+    "supportedEnvironments": [
+      "client"
+    ],
+    "tags": [
+      "optimization"
     ]
   },
   {
@@ -389,6 +429,19 @@
     ]
   },
   {
+    "id": "more_enchantment_info_container",
+    "name": "More Enchantment Info",
+    "description": "Providing enchantment info to JEI",
+    "url": "https://modrinth.com/mod/more-enchantment-info",
+    "iconUrl": "https://cdn.modrinth.com/data/TIo1UXXV/70dace736c9b4b2ab24c026262c3482bba179e4d_96.webp",
+    "supportedEnvironments": [
+      "client"
+    ],
+    "tags": [
+      "utility"
+    ]
+  },
+  {
     "id": "paginatedadvancements",
     "name": "Paginated Advancements & Custom Frames",
     "description": "Better advancements screen",
@@ -407,6 +460,19 @@
     "description": "Alternative Options Menu for Sodium",
     "url": "https://modrinth.com/mod/reeses-sodium-options",
     "iconUrl": "https://cdn.modrinth.com/data/Bh37bMuy/icon.png",
+    "supportedEnvironments": [
+      "client"
+    ],
+    "tags": [
+      "utility"
+    ]
+  },
+  {
+    "id": "zoomify",
+    "name": "Zoomify (Zoom)",
+    "description": "A zoom mod with infinite customizability.",
+    "url": "https://modrinth.com/mod/zoomify",
+    "iconUrl": "https://cdn.modrinth.com/data/w7ThoJFB/e2de67a0bfb9e8aa2347982ab3ec5463f26cca31_96.webp",
     "supportedEnvironments": [
       "client"
     ],
@@ -904,6 +970,24 @@
     ]
   },
   {
+    "id": "xpbook",
+    "name": "XP Tome",
+    "description": "Adds a book that can store a configurable amount of XP.",
+    "url": "https://modrinth.com/mod/xp-tome",
+    "iconUrl": "https://cdn.modrinth.com/data/AnpW69o3/03da4b754816b4491c26b5c7d52792e228c10503.png",
+    "supportedEnvironments": [
+      "client",
+      "server"
+    ],
+    "tags": [
+      "adventure",
+      "storage",
+      "utility",
+      "magic",
+      "technology"
+    ]
+  },
+  {
     "id": "immersive_aircraft",
     "name": "Immersive Aircraft",
     "description": "A bunch of rustic aircraft to travel, transport, and explore!",
@@ -1256,6 +1340,22 @@
     ]
   },
   {
+    "id": "psithurism",
+    "name": "Psithurism",
+    "description": "Bring Japanese culture into your home with new deco blocks, new food, traditional cosmetics and much more!",
+    "url": "https://modrinth.com/mod/psithurism",
+    "iconUrl": "https://cdn.modrinth.com/data/3wdNAIW9/bd1c5ceeb876d05c15487453e0d0567a071e3ca2_96.webp",
+    "supportedEnvironments": [
+      "client",
+      "server"
+    ],
+    "tags": [
+      "decoration",
+      "food",
+      "mobs"
+    ]
+  },
+  {
     "id": "farmhouse_decorations",
     "name": "Farmhouse Decorations",
     "description": "Farmhouse Decorations is all about old furniture perfect for house on the farm.",
@@ -1466,6 +1566,21 @@
       "social",
       "cursed",
       "management"
+    ]
+  },
+  {
+    "id": "adorn",
+    "name": "Adorn",
+    "description": "Decorate your home!",
+    "url": "https://modrinth.com/mod/adorn",
+    "iconUrl": "https://cdn.modrinth.com/data/E6FUtRJh/95207792ce3f6e1f828d132552d72372a913a3e2.png",
+    "supportedEnvironments": [
+      "client",
+      "server"
+    ],
+    "tags": [
+      "decoration",
+      "storage"
     ]
   },
   {
@@ -1781,6 +1896,21 @@
     ]
   },
   {
+    "id": "imfast",
+    "name": "I'm Fast",
+    "description": "A mod to remove minecraft moved too quickly! and moved wrongly (speed limits)",
+    "url": "https://modrinth.com/mod/im-fast",
+    "iconUrl": "https://cdn.modrinth.com/data/PaUMOeP0/aa01c08190d68edf4c681e692901dbfba3259964.webp",
+    "supportedEnvironments": [
+      "client",
+      "server"
+    ],
+    "tags": [
+      "game-mechanics",
+      "management"
+    ]
+  },
+  {
     "id": "disable_dimensions",
     "name": "Disable Dimensions",
     "description": "A hard-to-break, grief-resistant solution for preventing players from entering The Nether, The End, and any further custom dimensions, with optional per-dimension conditions.",
@@ -1859,24 +1989,6 @@
       "game-mechanics",
       "storage",
       "utility"
-    ]
-  },
-  {
-    "id": "custom-dimensions",
-    "name": "Custom Dimensions",
-    "description": "Server-side Fabric mod for persistent custom dimensions and two-way portals.",
-    "url": "https://modrinth.com/mod/custom-dimensions",
-    "iconUrl": "https://cdn.modrinth.com/data/1qLvD9tE/bedd783fbb7fab000890fa9a1ae7c22dfa3df52d_96.webp",
-    "supportedEnvironments": [
-      "client",
-      "server"
-    ],
-    "tags": [
-      "game-mechanics",
-      "technology",
-      "utility",
-      "management",
-      "worldgen"
     ]
   },
   {
@@ -1994,6 +2106,20 @@
     "description": "This mod adds prairie dogs as tamable animals to your world.",
     "url": "https://modrinth.com/mod/animal-garden-prairie-dog",
     "iconUrl": "https://cdn.modrinth.com/data/vdm5Eivp/0cf9201a66f11b4e02be4785ac6e76dadf6de44f_96.webp",
+    "supportedEnvironments": [
+      "client",
+      "server"
+    ],
+    "tags": [
+      "mobs"
+    ]
+  },
+  {
+    "id": "mavm",
+    "name": "More Axolotl Variants Mod",
+    "description": "Adds more axolotl variants!",
+    "url": "https://modrinth.com/mod/mavm",
+    "iconUrl": "https://cdn.modrinth.com/data/zitu8weW/1c5c0ba1b3afa8889e8bbe152df5e2e5b13a2a92_96.webp",
     "supportedEnvironments": [
       "client",
       "server"
@@ -2307,6 +2433,34 @@
     "description": "Creates a simple GUI config for every mod!",
     "url": "https://mrcrayfish.com/mods?id=configured",
     "iconUrl": null,
+    "supportedEnvironments": [
+      "client",
+      "server"
+    ],
+    "tags": [
+      "utility"
+    ]
+  },
+  {
+    "id": "controlify",
+    "name": "Controlify (Controller support)",
+    "description": "Adds the best controller support to Minecraft Java edition!",
+    "url": "https://modrinth.com/mod/controlify",
+    "iconUrl": "https://cdn.modrinth.com/data/DOUdJVEm/5a6c126c4c761ba3e8e9d3ef09a68e16ff60ff22_96.webp",
+    "supportedEnvironments": [
+      "client",
+      "server"
+    ],
+    "tags": [
+      "utility"
+    ]
+  },
+  {
+    "id": "jadeaddons",
+    "name": "Jade Addons (Fabric)",
+    "description": "Jade 🔍's additional mod supports for Fabric",
+    "url": "https://modrinth.com/mod/jade-addons-fabric",
+    "iconUrl": "https://cdn.modrinth.com/data/fThnVRli/b04217bc2b7dc524c4d12f81ff42cc1cefb9b0fc_96.webp",
     "supportedEnvironments": [
       "client",
       "server"
@@ -2665,11 +2819,39 @@
     ]
   },
   {
+    "id": "cloth-config",
+    "name": "Cloth Config API",
+    "description": "Configuration Library for Minecraft Mods",
+    "url": "https://modrinth.com/mod/cloth-config",
+    "iconUrl": "https://cdn.modrinth.com/data/9s6osm5g/ed8a2316cbb6f4fc5f510e8e13a59a85cbbbff4d_96.webp",
+    "supportedEnvironments": [
+      "client",
+      "server"
+    ],
+    "tags": [
+      "library"
+    ]
+  },
+  {
     "id": "collective",
     "name": "Collective",
     "description": "🎓 Collective is a shared library with common code for all of Serilum's mods.",
     "url": "https://modrinth.com/mod/collective",
     "iconUrl": "https://cdn.modrinth.com/data/e0M1UDsY/f5e4fe9ac298e2c14591920d6bda937c566accd0_96.webp",
+    "supportedEnvironments": [
+      "client",
+      "server"
+    ],
+    "tags": [
+      "library"
+    ]
+  },
+  {
+    "id": "custom-dimensions",
+    "name": "Custom Dimensions",
+    "description": "Creates persistent custom dimensions and server-authoritative two-way portals.",
+    "url": null,
+    "iconUrl": null,
     "supportedEnvironments": [
       "client",
       "server"
@@ -2721,6 +2903,20 @@
     ]
   },
   {
+    "id": "fabric-language-kotlin",
+    "name": "Fabric Language Kotlin",
+    "description": "This is a mod that enables usage of the Kotlin programming language for Fabric mods.",
+    "url": "https://modrinth.com/mod/fabric-language-kotlin",
+    "iconUrl": "https://cdn.modrinth.com/data/Ha28R6CL/72c3d74aeb665e45aea93a945a01474cbce3b7da_96.webp",
+    "supportedEnvironments": [
+      "client",
+      "server"
+    ],
+    "tags": [
+      "library"
+    ]
+  },
+  {
     "id": "forgeconfigapiport",
     "name": "Forge Config API Port",
     "description": "NeoForge's & Forge's config systems provided to other modding ecosystems. Designed for a multiloader architecture.",
@@ -2763,6 +2959,20 @@
     ]
   },
   {
+    "id": "mmodding",
+    "name": "MModding Library",
+    "description": "The MModding Library is the Main Library for MModding mods.",
+    "url": "https://modrinth.com/mod/mmodding-library",
+    "iconUrl": "https://cdn.modrinth.com/data/J3eDXLuX/ae614b5cbec44aea8da6664dc0d1a07d2c36b43d_96.webp",
+    "supportedEnvironments": [
+      "client",
+      "server"
+    ],
+    "tags": [
+      "library"
+    ]
+  },
+  {
     "id": "owo",
     "name": "oωo (owo-lib)",
     "description": "A general utility, GUI and config library for modding on Fabric and Quilt",
@@ -2796,6 +3006,20 @@
     "description": "Library for creating better server side content!",
     "url": "https://modrinth.com/mod/polymer",
     "iconUrl": "https://cdn.modrinth.com/data/xGdtZczs/icon.png",
+    "supportedEnvironments": [
+      "client",
+      "server"
+    ],
+    "tags": [
+      "library"
+    ]
+  },
+  {
+    "id": "preloading_tricks",
+    "name": "Preloading Tricks",
+    "description": "A developer tool for early loader access, class transformation, and preloading hacks.",
+    "url": "https://modrinth.com/mod/preloading-tricks",
+    "iconUrl": "https://cdn.modrinth.com/data/FFeAJNCx/269f95bb41370f22ffddbcc28ecab47a141da670_96.webp",
     "supportedEnvironments": [
       "client",
       "server"
@@ -2908,6 +3132,21 @@
     ]
   },
   {
+    "id": "mavapi",
+    "name": "More Axolotl Variants API",
+    "description": "Lightweight API to implement new axolotl variants.",
+    "url": "https://modrinth.com/mod/mavapi",
+    "iconUrl": "https://cdn.modrinth.com/data/t4Ybtys2/f84f9785be9ce709aa25c1fd1ce93d91d086726d.png",
+    "supportedEnvironments": [
+      "client",
+      "server"
+    ],
+    "tags": [
+      "library",
+      "mobs"
+    ]
+  },
+  {
     "id": "villagerapi",
     "name": "Villager API",
     "description": "An API to add custom villager professions and villager biome types with custom trades without writing code.",
@@ -2970,6 +3209,21 @@
     ]
   },
   {
+    "id": "silk-all",
+    "name": "Silk",
+    "description": "Kotlin Minecraft API - targetting Fabric, Quilt and Paper",
+    "url": "https://modrinth.com/mod/silk",
+    "iconUrl": "https://cdn.modrinth.com/data/aTaCgKLW/532a7cfb249d72b39d9855fe9ea0a4ec5db36e42_96.webp",
+    "supportedEnvironments": [
+      "client",
+      "server"
+    ],
+    "tags": [
+      "library",
+      "utility"
+    ]
+  },
+  {
     "id": "lithostitched",
     "name": "Lithostitched",
     "description": "Library mod with new configurability and compatibility enhancements for worldgen",
@@ -3016,9 +3270,24 @@
     ]
   },
   {
+    "id": "jade",
+    "name": "Jade 🔍",
+    "description": "Shows information about what you are looking at. (Hwyla/Waila fork for Minecraft 1.16+)",
+    "url": "https://modrinth.com/mod/jade",
+    "iconUrl": "https://cdn.modrinth.com/data/nvQzSEkH/b04217bc2b7dc524c4d12f81ff42cc1cefb9b0fc_96.webp",
+    "supportedEnvironments": [
+      "client",
+      "server"
+    ],
+    "tags": [
+      "utility",
+      "library"
+    ]
+  },
+  {
     "id": "waycraft_joinfix",
     "name": "Waycraft Join Fix",
-    "description": "Lets players join worlds with the Waycraft pack: guards Polymer's recipe ingredient codec when Fetzi's Displays syncs recipes on join, and replaces Farmhouse Decorations' broken load function and Kaleidoscope Nether's broken doll loot tables. Gives every mob the tempt_range attribute, so modded mobs with a tempt goal but no Animal attributes (Christmas Ginger House's reindeer) no longer crash the world. On clients with WaveyCapes, skips the wavy cape on entities that are not players, so viewing a Camera Monitoring feed (its decoy body) no longer crashes the game. Safe on clients and servers, and alongside waycraft-spells.",
+    "description": "Lets players join worlds with the Waycraft pack: guards Polymer's recipe ingredient codec when Fetzi's Displays syncs recipes on join, and replaces Farmhouse Decorations' broken load function and Kaleidoscope Nether's broken doll loot tables. Gives every mob the tempt_range attribute, so modded mobs with a tempt goal but no Animal attributes (Christmas Ginger House's reindeer) no longer crash the world. On clients with WaveyCapes, skips the wavy cape on entities that are not players, so viewing a Camera Monitoring feed (its decoy body) no longer crashes the game. Draws Waycraft's elytra skins 1 px closer to the back, on top of whatever Fresh Animations does. Safe on clients and servers, and alongside waycraft-spells.",
     "url": null,
     "iconUrl": null,
     "supportedEnvironments": [
@@ -3027,251 +3296,6 @@
     ],
     "tags": [
       "waycraft"
-    ]
-  },
-  {
-    "id": "skinlayers3d",
-    "name": "3D Skin Layers",
-    "description": "Render the player skin layer in 3d!",
-    "url": "https://modrinth.com/mod/3dskinlayers",
-    "iconUrl": "https://cdn.modrinth.com/data/zV5r3pPn/ff7010d4ec0275609866c8b0f603b25e25949c08_96.webp",
-    "supportedEnvironments": [
-      "unknown"
-    ],
-    "tags": [
-      "adventure",
-      "decoration"
-    ]
-  },
-  {
-    "id": "xpbook",
-    "name": "XP Tome",
-    "description": "Adds a book that can store a configurable amount of XP.",
-    "url": "https://modrinth.com/mod/xp-tome",
-    "iconUrl": "https://cdn.modrinth.com/data/AnpW69o3/03da4b754816b4491c26b5c7d52792e228c10503.png",
-    "supportedEnvironments": [
-      "unknown"
-    ],
-    "tags": [
-      "adventure",
-      "storage",
-      "utility",
-      "magic",
-      "technology"
-    ]
-  },
-  {
-    "id": "waveycapes",
-    "name": "Wavey Capes",
-    "description": "The cape shouldn't be a static slab",
-    "url": "https://modrinth.com/mod/wavey-capes",
-    "iconUrl": "https://cdn.modrinth.com/data/kYuIpRLv/a51c297bdaf9685a23cc9994372fa8d45852b98b_96.webp",
-    "supportedEnvironments": [
-      "unknown"
-    ],
-    "tags": [
-      "decoration"
-    ]
-  },
-  {
-    "id": "psithurism",
-    "name": "Psithurism",
-    "description": "Bring Japanese culture into your home with new deco blocks, new food, traditional cosmetics and much more!",
-    "url": "https://modrinth.com/mod/psithurism",
-    "iconUrl": "https://cdn.modrinth.com/data/3wdNAIW9/bd1c5ceeb876d05c15487453e0d0567a071e3ca2_96.webp",
-    "supportedEnvironments": [
-      "unknown"
-    ],
-    "tags": [
-      "decoration",
-      "food",
-      "mobs"
-    ]
-  },
-  {
-    "id": "adorn",
-    "name": "Adorn",
-    "description": "Decorate your home!",
-    "url": "https://modrinth.com/mod/adorn",
-    "iconUrl": "https://cdn.modrinth.com/data/E6FUtRJh/95207792ce3f6e1f828d132552d72372a913a3e2.png",
-    "supportedEnvironments": [
-      "unknown"
-    ],
-    "tags": [
-      "decoration",
-      "storage"
-    ]
-  },
-  {
-    "id": "mavm",
-    "name": "More Axolotl Variants Mod",
-    "description": "Adds more axolotl variants!",
-    "url": "https://modrinth.com/mod/mavm",
-    "iconUrl": "https://cdn.modrinth.com/data/zitu8weW/1c5c0ba1b3afa8889e8bbe152df5e2e5b13a2a92_96.webp",
-    "supportedEnvironments": [
-      "unknown"
-    ],
-    "tags": [
-      "mobs"
-    ]
-  },
-  {
-    "id": "entityculling",
-    "name": "Entity Culling",
-    "description": "Using async path-tracing to hide Block-/Entities that are not visible",
-    "url": "https://modrinth.com/mod/entityculling",
-    "iconUrl": "https://cdn.modrinth.com/data/NNAgCjsB/7873452d6cede4daed12da3d7d8c193ab88b4fd6_96.webp",
-    "supportedEnvironments": [
-      "unknown"
-    ],
-    "tags": [
-      "optimization"
-    ]
-  },
-  {
-    "id": "controlify",
-    "name": "Controlify (Controller support)",
-    "description": "Adds the best controller support to Minecraft Java edition!",
-    "url": "https://modrinth.com/mod/controlify",
-    "iconUrl": "https://cdn.modrinth.com/data/DOUdJVEm/5a6c126c4c761ba3e8e9d3ef09a68e16ff60ff22_96.webp",
-    "supportedEnvironments": [
-      "unknown"
-    ],
-    "tags": [
-      "utility"
-    ]
-  },
-  {
-    "id": "jadeaddons",
-    "name": "Jade Addons (Fabric)",
-    "description": "Jade 🔍's additional mod supports for Fabric",
-    "url": "https://modrinth.com/mod/jade-addons-fabric",
-    "iconUrl": "https://cdn.modrinth.com/data/fThnVRli/b04217bc2b7dc524c4d12f81ff42cc1cefb9b0fc_96.webp",
-    "supportedEnvironments": [
-      "unknown"
-    ],
-    "tags": [
-      "utility"
-    ]
-  },
-  {
-    "id": "more_enchantment_info_container",
-    "name": "More Enchantment Info",
-    "description": "Providing enchantment info to JEI",
-    "url": "https://modrinth.com/mod/more-enchantment-info",
-    "iconUrl": "https://cdn.modrinth.com/data/TIo1UXXV/70dace736c9b4b2ab24c026262c3482bba179e4d_96.webp",
-    "supportedEnvironments": [
-      "unknown"
-    ],
-    "tags": [
-      "utility"
-    ]
-  },
-  {
-    "id": "zoomify",
-    "name": "Zoomify (Zoom)",
-    "description": "A zoom mod with infinite customizability.",
-    "url": "https://modrinth.com/mod/zoomify",
-    "iconUrl": "https://cdn.modrinth.com/data/w7ThoJFB/e2de67a0bfb9e8aa2347982ab3ec5463f26cca31_96.webp",
-    "supportedEnvironments": [
-      "unknown"
-    ],
-    "tags": [
-      "utility"
-    ]
-  },
-  {
-    "id": "cloth-config",
-    "name": "Cloth Config API",
-    "description": "Configuration Library for Minecraft Mods",
-    "url": "https://modrinth.com/mod/cloth-config",
-    "iconUrl": "https://cdn.modrinth.com/data/9s6osm5g/ed8a2316cbb6f4fc5f510e8e13a59a85cbbbff4d_96.webp",
-    "supportedEnvironments": [
-      "unknown"
-    ],
-    "tags": [
-      "library"
-    ]
-  },
-  {
-    "id": "fabric-language-kotlin",
-    "name": "Fabric Language Kotlin",
-    "description": "This is a mod that enables usage of the Kotlin programming language for Fabric mods.",
-    "url": "https://modrinth.com/mod/fabric-language-kotlin",
-    "iconUrl": "https://cdn.modrinth.com/data/Ha28R6CL/72c3d74aeb665e45aea93a945a01474cbce3b7da_96.webp",
-    "supportedEnvironments": [
-      "unknown"
-    ],
-    "tags": [
-      "library"
-    ]
-  },
-  {
-    "id": "mmodding",
-    "name": "MModding Library",
-    "description": "The MModding Library is the Main Library for MModding mods.",
-    "url": "https://modrinth.com/mod/mmodding-library",
-    "iconUrl": "https://cdn.modrinth.com/data/J3eDXLuX/ae614b5cbec44aea8da6664dc0d1a07d2c36b43d_96.webp",
-    "supportedEnvironments": [
-      "unknown"
-    ],
-    "tags": [
-      "library"
-    ]
-  },
-  {
-    "id": "preloading_tricks",
-    "name": "Preloading Tricks",
-    "description": "A developer tool for early loader access, class transformation, and preloading hacks.",
-    "url": "https://modrinth.com/mod/preloading-tricks",
-    "iconUrl": "https://cdn.modrinth.com/data/FFeAJNCx/269f95bb41370f22ffddbcc28ecab47a141da670_96.webp",
-    "supportedEnvironments": [
-      "unknown"
-    ],
-    "tags": [
-      "library"
-    ]
-  },
-  {
-    "id": "mavapi",
-    "name": "More Axolotl Variants API",
-    "description": "Lightweight API to implement new axolotl variants.",
-    "url": "https://modrinth.com/mod/mavapi",
-    "iconUrl": "https://cdn.modrinth.com/data/t4Ybtys2/f84f9785be9ce709aa25c1fd1ce93d91d086726d.png",
-    "supportedEnvironments": [
-      "unknown"
-    ],
-    "tags": [
-      "library",
-      "mobs"
-    ]
-  },
-  {
-    "id": "silk-all",
-    "name": "Silk",
-    "description": "Kotlin Minecraft API - targetting Fabric, Quilt and Paper",
-    "url": "https://modrinth.com/mod/silk",
-    "iconUrl": "https://cdn.modrinth.com/data/aTaCgKLW/532a7cfb249d72b39d9855fe9ea0a4ec5db36e42_96.webp",
-    "supportedEnvironments": [
-      "unknown"
-    ],
-    "tags": [
-      "library",
-      "utility"
-    ]
-  },
-  {
-    "id": "jade",
-    "name": "Jade 🔍",
-    "description": "Shows information about what you are looking at. (Hwyla/Waila fork for Minecraft 1.16+)",
-    "url": "https://modrinth.com/mod/jade",
-    "iconUrl": "https://cdn.modrinth.com/data/nvQzSEkH/b04217bc2b7dc524c4d12f81ff42cc1cefb9b0fc_96.webp",
-    "supportedEnvironments": [
-      "unknown"
-    ],
-    "tags": [
-      "utility",
-      "library"
     ]
   }
 ]

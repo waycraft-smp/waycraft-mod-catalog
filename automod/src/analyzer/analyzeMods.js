@@ -1,9 +1,9 @@
-import path from "node:path";
-import { classifyMods } from "./classifyMods.js";
-import { lookupModrinth } from "../services/modrinth.js";
-import { readJar } from "./readJar.js";
+import path from 'node:path';
+import { classifyMods } from './classifyMods.js';
+import { lookupModrinth } from '../services/modrinth.js';
+import { readJar } from './readJar.js';
 
-export async function analyzeMods(jarPaths, manualTags = {}) {
+export async function analyzeMods(jarPaths, manualTags = {}, manualSupportedEnvironments = {}) {
   const readableJars = [];
   const skipped = [];
 
@@ -20,7 +20,7 @@ export async function analyzeMods(jarPaths, manualTags = {}) {
   }
 
   const modrinthData = await lookupModrinth(readableJars);
-  const mods = classifyMods(readableJars, modrinthData, manualTags);
+  const mods = classifyMods(readableJars, modrinthData, manualTags, manualSupportedEnvironments);
 
   return {
     mods,

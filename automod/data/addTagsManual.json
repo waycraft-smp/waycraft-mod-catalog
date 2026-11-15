@@ -19,5 +19,6 @@
   "petdoor": ["decoration", "game-mechanics"],
   "psithurism": ["decoration", "food", "mobs"],
   "refurbished_furniture": ["decoration"],
-  "tonicore": ["library"]
+  "tonicore": ["library"],
+  "custom-dimensions": ["library"]
 }

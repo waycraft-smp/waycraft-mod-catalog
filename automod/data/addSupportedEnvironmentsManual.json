@@ -1,0 +1,20 @@
+{
+  "skinlayers3d": ["client"],
+  "xpbook": ["client", "server"],
+  "waveycapes": ["client"],
+  "psithurism": ["client", "server"],
+  "adorn": ["client", "server"],
+  "mavm": ["client", "server"],
+  "entityculling": ["client"],
+  "controlify": ["client", "server"],
+  "jadeaddons": ["client", "server"],
+  "more_enchantment_info_container": ["client"],
+  "zoomify": ["client"],
+  "cloth-config": ["client", "server"],
+  "fabric-language-kotlin": ["client", "server"],
+  "mmodding": ["client", "server"],
+  "preloading_tricks": ["client", "server"],
+  "mavapi": ["client", "server"],
+  "silk-all": ["client", "server"],
+  "jade": ["client", "server"]
+}

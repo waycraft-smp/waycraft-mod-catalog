@@ -3,6 +3,7 @@ import { stdin, stdout } from "node:process";
 import { mkdir, readFile, readdir, stat, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { analyzeMods } from "../analyzer/analyzeMods.js";
+import { addManualEntry, loadManualMap, writeManualMap } from "./manualJson.js";
 
 const IGNORED_FOLDERS = new Set(["node_modules", ".git", "output"]);
 const DATA_DIRECTORY = path.resolve("data");
@@ -87,23 +88,46 @@ async function main() {
 
   await mkdir(DATA_DIRECTORY, { recursive: true });
   const manualTagsPath = path.join(DATA_DIRECTORY, "addTagsManual.json");
-  let manualTags = {};
-  try {
-    manualTags = JSON.parse(await readFile(manualTagsPath, "utf8"));
-    if (!manualTags || Array.isArray(manualTags) || typeof manualTags !== "object") {
-      throw new Error("El archivo debe contener un objeto JSON con IDs como claves.");
+  const manualTags = await loadManualMap(manualTagsPath);
+  const manualSupportedEnvironmentsPath = path.join(
+    DATA_DIRECTORY,
+    "addSupportedEnvironmentsManual.json",
+  );
+  const manualSupportedEnvironments = await loadManualMap(manualSupportedEnvironmentsPath);
+
+  for (const [modId, environments] of Object.entries(manualSupportedEnvironments)) {
+    if (
+      !Array.isArray(environments) ||
+      environments.some((environment) => !["client", "server"].includes(environment))
+    ) {
+      throw new Error(
+        `El entorno manual de "${modId}" debe ser un array con "client", "server" o ambos.`,
+      );
     }
-  } catch (error) {
-    if (error.code !== "ENOENT") throw new Error(`No se pudo leer ${manualTagsPath}: ${error.message}`);
   }
 
-  const result = await analyzeMods(jarPaths, manualTags);
+  const result = await analyzeMods(jarPaths, manualTags, manualSupportedEnvironments);
   let manualTagsChanged = false;
   for (const mod of result.mods) {
-    if (mod.id && mod.tags.length === 0 && !Object.hasOwn(manualTags, mod.id)) {
-      manualTags[mod.id] = [];
-      manualTagsChanged = true;
+    if (mod.tags.length === 0) {
+      manualTagsChanged = addManualEntry(manualTags, mod.id, []) || manualTagsChanged;
     }
+  }
+
+  let manualSupportedEnvironmentsChanged = false;
+  const pendingEnvironmentMods = [];
+  for (const mod of result.mods) {
+    const environments = mod.supportedEnvironments;
+    const isResolved =
+      environments.length > 0 &&
+      environments.every((environment) => ["client", "server"].includes(environment));
+
+    if (isResolved) continue;
+
+    pendingEnvironmentMods.push(mod);
+    manualSupportedEnvironmentsChanged =
+      addManualEntry(manualSupportedEnvironments, mod.id, []) ||
+      manualSupportedEnvironmentsChanged;
   }
 
   const outputDirectory = path.resolve("output");
@@ -116,7 +140,10 @@ async function main() {
     writeFile(outputPath, `${JSON.stringify(mods, null, 2)}\n`, "utf8"),
     writeFile(LAST_FOLDER_FILE, `${folderPath}\n`, "utf8"),
     ...(manualTagsChanged
-      ? [writeFile(manualTagsPath, `${JSON.stringify(manualTags, null, 2)}\n`, "utf8")]
+      ? [writeManualMap(manualTagsPath, manualTags)]
+      : []),
+    ...(manualSupportedEnvironmentsChanged
+      ? [writeManualMap(manualSupportedEnvironmentsPath, manualSupportedEnvironments)]
       : []),
   ]);
 
@@ -125,6 +152,7 @@ async function main() {
     Librerías: 0,
     Mods: 0,
     "Sin etiquetas": 0,
+    "Pendientes de entorno": pendingEnvironmentMods.length,
     "Total identificado": result.mods.length,
   };
 
@@ -154,6 +182,19 @@ async function main() {
     console.log(color(`\nNo se pudieron leer ${result.skipped.length} archivos`, "1;33"));
     for (const { file, reason } of result.skipped) {
       console.log(`  • ${file}: ${reason}`);
+    }
+  }
+
+  if (pendingEnvironmentMods.length > 0) {
+    console.log(
+      color(
+        `\n${pendingEnvironmentMods.length} mods siguen sin entorno confirmado y permanecen en la salida.`,
+        "1;33",
+      ),
+    );
+    console.log(`Completa "${manualSupportedEnvironmentsPath}" con "client", "server" o ambos:`);
+    for (const mod of pendingEnvironmentMods) {
+      console.log(`  • ${mod.id ?? "sin ID"}: ${mod.name}`);
     }
   }
 
