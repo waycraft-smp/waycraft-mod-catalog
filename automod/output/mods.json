@@ -722,7 +722,7 @@
     "name": "MES - Moog's End Structures",
     "description": "Lots of Vanilla styled structrues to fill up the end dimension with life!",
     "url": "https://modrinth.com/mod/mes-moogs-end-structures",
-    "iconUrl": "https://cdn.modrinth.com/data/r4PuRGfV/5dfea63344f4605a5007c78782b3ecb4d05d408b_96.webp",
+    "iconUrl": "https://cdn.modrinth.com/data/r4PuRGfV/d6eddee27d7863a8bae92c5d0a91a80b8e89f537.gif",
     "supportedEnvironments": [
       "client",
       "server"
@@ -738,7 +738,7 @@
     "name": "MTR - Moog's Temples Reimagined",
     "description": "Discover large, rare temples filled with challenging encounters, valuable loot, and exciting exploration that will test your skills and reward your bravery",
     "url": "https://modrinth.com/mod/mtr-moogs-temples-reimagined",
-    "iconUrl": "https://cdn.modrinth.com/data/UNanzCXS/bdaaa13ff268b031c7f2e42793a741640e3a0968_96.webp",
+    "iconUrl": "https://cdn.modrinth.com/data/UNanzCXS/6a03604d0d7db1ab78442ac70a3efbf04ea56c8c.gif",
     "supportedEnvironments": [
       "client",
       "server"
@@ -922,6 +922,23 @@
     ]
   },
   {
+    "id": "cozys-improved-cats",
+    "name": "Cozy's Improved Cats",
+    "description": "A complete upgrade of pet cats ✰ Pet cats have personality, helpful abilities, and can be respawned!",
+    "url": "https://modrinth.com/mod/cozys-improved-cats",
+    "iconUrl": "https://cdn.modrinth.com/data/5MaZBjPT/312cf44ffb51c8a167a420eb3925ed2bb52fc0ae_96.webp",
+    "supportedEnvironments": [
+      "client",
+      "server"
+    ],
+    "tags": [
+      "adventure",
+      "mobs",
+      "utility",
+      "game-mechanics"
+    ]
+  },
+  {
     "id": "flowerymooblooms",
     "name": "Friends&Foes - Flowery Mooblooms (Fabric/Quilt)",
     "description": "An addon for the Friends&Foes mod, adding one moobloom variant for each flower.",
@@ -1087,7 +1104,7 @@
     "name": "MOS - Moog's Ocean Structures",
     "description": "100+ vanilla style ocean structures. Dive through Atlantean ruins, ancient shipwrecks, ocean temples, and drifting rafts for loot and adventure.",
     "url": "https://modrinth.com/mod/mos-moogs-ocean-structures",
-    "iconUrl": "https://cdn.modrinth.com/data/ZKBkklMv/f45d73557c6bfe576e717c2fc1afec872a5fcfb5_96.webp",
+    "iconUrl": "https://cdn.modrinth.com/data/ZKBkklMv/daf1e65502f2d6852368c6de4745bf7379646329.gif",
     "supportedEnvironments": [
       "client",
       "server"
@@ -1102,7 +1119,7 @@
     "name": "MMV - Moog's Missing Villages",
     "description": "This is a mod which adds in the missing jungle and swamp villages in a vanilla friendly way and style",
     "url": "https://modrinth.com/mod/mmv-moogs-missing-villages",
-    "iconUrl": "https://cdn.modrinth.com/data/spZb29SD/451e1cc5bcbfed58560782f424115ccd8dc6e056_96.webp",
+    "iconUrl": "https://cdn.modrinth.com/data/spZb29SD/e6a6741dd22a75b34fb468edfdebc35c39e48c84.gif",
     "supportedEnvironments": [
       "client",
       "server"
@@ -1118,7 +1135,7 @@
     "name": "MSS - Moog's Soaring Structures",
     "description": "Lots of awesome vanilla style floating islands full of loot, mobs and dungeons for you to explore!",
     "url": "https://modrinth.com/mod/mss-moogs-soaring-structures",
-    "iconUrl": "https://cdn.modrinth.com/data/RJCLIx7k/7f24153b661cdf1c73034d7ebc200cfd115b6a98_96.webp",
+    "iconUrl": "https://cdn.modrinth.com/data/RJCLIx7k/3714d8b2f318d6cb6a134f4fcaf1b12729c8fc35.gif",
     "supportedEnvironments": [
       "client",
       "server"
@@ -1944,22 +1961,6 @@
     ]
   },
   {
-    "id": "enhanced-cats",
-    "name": "Enhanced Cats",
-    "description": "Makes cats a little less boring",
-    "url": "https://modrinth.com/mod/enhanced-cats",
-    "iconUrl": null,
-    "supportedEnvironments": [
-      "client",
-      "server"
-    ],
-    "tags": [
-      "game-mechanics",
-      "mobs",
-      "utility"
-    ]
-  },
-  {
     "id": "netherportalfix",
     "name": "NetherPortalFix",
     "description": "Ensures correct destinations when traveling back and forth through Nether Portals in Multiplayer.",
@@ -2126,6 +2127,25 @@
     ],
     "tags": [
       "mobs"
+    ]
+  },
+  {
+    "id": "icys-better-horses",
+    "name": "Icy's Better Horses",
+    "description": "Better Horses reworks horses into long-term companions through better traversal, progression, and utility systems.",
+    "url": "https://modrinth.com/mod/icys-better-horses",
+    "iconUrl": "https://cdn.modrinth.com/data/XlUm5I57/2183d1d20b79b41253e1cb5dcd5c1e6eabc3e120.gif",
+    "supportedEnvironments": [
+      "client",
+      "server"
+    ],
+    "tags": [
+      "mobs",
+      "transportation",
+      "utility",
+      "adventure",
+      "equipment",
+      "technology"
     ]
   },
   {
@@ -2313,7 +2333,7 @@
     "name": "No Chat Reports",
     "description": "Makes chat unreportable (where possible)",
     "url": "https://modrinth.com/mod/no-chat-reports",
-    "iconUrl": "https://cdn.modrinth.com/data/qQyHxfxd/icon.png",
+    "iconUrl": "https://cdn.modrinth.com/data/qQyHxfxd/0a88ddeb37b96a2a9e514db545253012368fe924.png",
     "supportedEnvironments": [
       "client",
       "server"
@@ -2615,22 +2635,6 @@
     ]
   },
   {
-    "id": "horseman",
-    "name": "Horseman",
-    "description": "Improved horses: faster hitching, smooth riding, QOL features and more...",
-    "url": "https://modrinth.com/mod/horseman",
-    "iconUrl": "https://cdn.modrinth.com/data/qIv5FhAA/7a7cf7848d05a3cb1150a58a3ac5c92a8539c2cd.png",
-    "supportedEnvironments": [
-      "client",
-      "server"
-    ],
-    "tags": [
-      "utility",
-      "game-mechanics",
-      "transportation"
-    ]
-  },
-  {
     "id": "crash_assistant",
     "name": "Crash Assistant",
     "description": "Shows a GUI after Minecraft crashes, immediately showing and analyzing all affected logs.",
@@ -2683,7 +2687,7 @@
     "name": "Moog's Structure Lib (moogs_structures)",
     "description": "This is a library mod for the Moogs Structure series",
     "url": "https://modrinth.com/mod/moogs-structure-lib",
-    "iconUrl": "https://cdn.modrinth.com/data/1oUDhxuy/fef0b294bd97cb59292df315fa46013a6db76bd5_96.webp",
+    "iconUrl": "https://cdn.modrinth.com/data/1oUDhxuy/edb1c17063f481da9bfdb5f584ee0e92073bb782.gif",
     "supportedEnvironments": [
       "client",
       "server"
@@ -2698,7 +2702,7 @@
     "name": "MNS - Moog's Nether Structures",
     "description": "loads of structures made with vanilla blocks and entities bringing life to your world! Discover loot, enemies, & more along the way!",
     "url": "https://modrinth.com/mod/mns-moogs-nether-structures",
-    "iconUrl": "https://cdn.modrinth.com/data/nGUXvjTa/986323910fb5330e8799031fb59a6a42260625dc_96.webp",
+    "iconUrl": "https://cdn.modrinth.com/data/nGUXvjTa/c984888c9c8451cf0f2b6d8d3d16d4dfe07cf570.gif",
     "supportedEnvironments": [
       "client",
       "server"
@@ -2760,6 +2764,22 @@
     ]
   },
   {
+    "id": "modonomicon",
+    "name": "Modonomicon",
+    "description": "Modonomicon is an in-game documentation mod inspired by Thaumcraft's Thaumonomicon and Patchouli, and aims to provide the best of both, with some unique flavors.",
+    "url": "https://modrinth.com/mod/modonomicon",
+    "iconUrl": "https://cdn.modrinth.com/data/692GClaE/2ff28ac59b51945e62f2680166dc8322f112be2c.png",
+    "supportedEnvironments": [
+      "client",
+      "server"
+    ],
+    "tags": [
+      "game-mechanics",
+      "library",
+      "utility"
+    ]
+  },
+  {
     "id": "vanilla-permissions",
     "name": "Vanilla Permissions",
     "description": "Adds permission checks into vanilla, to allow for full permission customization",
@@ -2773,6 +2793,25 @@
       "game-mechanics",
       "management",
       "utility",
+      "library"
+    ]
+  },
+  {
+    "id": "custom-dimensions",
+    "name": "Custom Dimensions",
+    "description": "Server-side Fabric mod for persistent custom dimensions and two-way portals.",
+    "url": "https://modrinth.com/mod/custom-dimensions",
+    "iconUrl": "https://cdn.modrinth.com/data/1qLvD9tE/bedd783fbb7fab000890fa9a1ae7c22dfa3df52d_96.webp",
+    "supportedEnvironments": [
+      "client",
+      "server"
+    ],
+    "tags": [
+      "game-mechanics",
+      "technology",
+      "utility",
+      "management",
+      "worldgen",
       "library"
     ]
   },
@@ -2838,20 +2877,6 @@
     "description": "🎓 Collective is a shared library with common code for all of Serilum's mods.",
     "url": "https://modrinth.com/mod/collective",
     "iconUrl": "https://cdn.modrinth.com/data/e0M1UDsY/f5e4fe9ac298e2c14591920d6bda937c566accd0_96.webp",
-    "supportedEnvironments": [
-      "client",
-      "server"
-    ],
-    "tags": [
-      "library"
-    ]
-  },
-  {
-    "id": "custom-dimensions",
-    "name": "Custom Dimensions",
-    "description": "Creates persistent custom dimensions and server-authoritative two-way portals.",
-    "url": null,
-    "iconUrl": null,
     "supportedEnvironments": [
       "client",
       "server"
@@ -3287,7 +3312,7 @@
   {
     "id": "waycraft_joinfix",
     "name": "Waycraft Join Fix",
-    "description": "Lets players join worlds with the Waycraft pack: guards Polymer's recipe ingredient codec when Fetzi's Displays syncs recipes on join, and replaces Farmhouse Decorations' broken load function and Kaleidoscope Nether's broken doll loot tables. Gives every mob the tempt_range attribute, so modded mobs with a tempt goal but no Animal attributes (Christmas Ginger House's reindeer) no longer crash the world. On clients with WaveyCapes, skips the wavy cape on entities that are not players, so viewing a Camera Monitoring feed (its decoy body) no longer crashes the game. Draws Waycraft's elytra skins 1 px closer to the back, on top of whatever Fresh Animations does. Safe on clients and servers, and alongside waycraft-spells.",
+    "description": "Lets players join worlds with the Waycraft pack: guards Polymer's recipe ingredient codec when Fetzi's Displays syncs recipes on join, and replaces Farmhouse Decorations' broken load function and Kaleidoscope Nether's broken doll loot tables. Gives every mob the tempt_range attribute, so modded mobs with a tempt goal but no Animal attributes (Christmas Ginger House's reindeer) no longer crash the world. On clients with WaveyCapes, skips the wavy cape on entities that are not players, so viewing a Camera Monitoring feed (its decoy body) no longer crashes the game. Draws Waycraft's elytra skins 1 px closer to the back, on top of whatever Fresh Animations does. After a server resource pack is applied at join, reloads resources once so Entity Model Features shows its name-based models (no F3+T needed). Safe on clients and servers, and alongside waycraft-spells.",
     "url": null,
     "iconUrl": null,
     "supportedEnvironments": [
