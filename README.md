@@ -97,8 +97,6 @@ Alternatively, run `update-catalog.bat` from the repository root. It reads the s
 
 ---
 
-## Client
-
 ### Client: Requirements and installation
 
 - [Node.js](https://nodejs.org/) 18 or later.
