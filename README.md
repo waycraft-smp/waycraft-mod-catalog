@@ -9,9 +9,7 @@ A web catalog of the mods included in the Waycraft SMP modpack. **AutoMod** gene
 
 ---
 
-## AutoMod
-
-### Requirements and installation
+### AutoMod: Requirements and installation
 
 - [Node.js](https://nodejs.org/) 18 or later.
 - Internet connection.
@@ -101,7 +99,7 @@ Alternatively, run `update-catalog.bat` from the repository root. It reads the s
 
 ## Client
 
-### Requirements and installation
+### Client: Requirements and installation
 
 - [Node.js](https://nodejs.org/) 18 or later.
 - Internet connection to retrieve the catalog from GitHub.
