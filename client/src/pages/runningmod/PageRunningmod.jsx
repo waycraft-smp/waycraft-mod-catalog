@@ -16,6 +16,58 @@ const labelFor = tag =>
     .map(part => part[0].toUpperCase() + part.slice(1))
     .join(' ');
 
+const FEATURE_SECTIONS = [
+  {
+    icon: '🧭',
+    title: 'Exploration & Gameplay',
+    items: [
+      'Waycraft Spells – Custom content & fixes',
+      'Moog’s Structures & YUNG’s Mods – Villages, temples, mineshafts, dungeons & End overhaul',
+      'Artifacts – Discoverable relics with unique abilities',
+      'Friends & Foes + More Villagers – New vote mobs & villager jobs',
+      'Better Archeology, Fishing Frontier & Field Guide – Deeper archaeology, fishing progression & spyglass journal',
+      'Lootr & Universal Graves – Per-player loot & safe death graves',
+    ],
+  },
+  {
+    icon: '✈️',
+    title: 'Travel & Gear',
+    items: [
+      'Waystones – Fast travel across the world',
+      'Immersive Aircraft – Craftable airships, biplanes & gyrodynes',
+      'High-Speed Rail, Minecart Chains & Zipline – Faster trains & ziplines',
+      'Backpacked & Comforts – Backpacks, sleeping bags & hammocks',
+    ],
+  },
+  {
+    icon: '🍲',
+    title: 'Cooking & Brewing',
+    items: [
+      'Farmer’s Delight (+ Rustic, Storage & Display) – Expanded farming & cooking',
+      'Kaleidoscope (Cookery, Tavern, Nether, End) & AlcoCraft+ – Gourmet food, wine & brewing',
+    ],
+  },
+  {
+    icon: '🏡',
+    title: 'Building, Decor & Extras',
+    items: [
+      'Furniture & Decor – Refurbished Furniture, Adorn, Macaw’s, Cluttered, Beautify, Farmhouse, Voxelized Furniture, Psithurism & Better Fish Tanks',
+      'Interactive & RP – Camerapture photos, CCTV, synced TVs & instruments',
+      'Better Pets – Improved dogs, cats, horses, axolotls & Shared Pets',
+    ],
+  },
+  {
+    icon: '🎙️',
+    title: 'Multiplayer & QoL',
+    items: [
+      'Voice, Audio & Emotes – Simple Voice Chat, Sound Physics, AudioPlayer & Emotecraft',
+      'Claims & PvP – Open Parties and Claims & opt-in PvP',
+      'Maps – BlueMap 3D & Xaero’s World Map/Minimap',
+      'Utility – Iron Chests, Metal Barrels, JEI, Jade, XP Tome, Discord Integration & AutoModpack',
+    ],
+  },
+];
+
 export default function PageRunningmod({ selectedCategory }) {
   const [mods, setMods] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -78,19 +130,33 @@ export default function PageRunningmod({ selectedCategory }) {
 
   return (
     <section aria-labelledby="running-mods-heading">
-      <header className="mb-7 border-b border-white/10 pb-6">
-        <p className="text-sm text-slate-400">Waycraft SMP {mods.length} mods</p>
-
+      <header className="mb-7 border-b border-white/10 pb-7">
         <h1
           id="running-mods-heading"
-          className="mt-1 text-3xl font-bold tracking-tight text-white sm:text-4xl"
+          className="text-3xl font-bold tracking-tight text-white sm:text-4xl"
         >
-          Running Mods
+          Mods Included & Their Impact on Gameplay
         </h1>
 
-        <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-400">
-          Browse the mods included in the current server setup.
-        </p>
+        <ul className="mt-5 space-y-1.5 text-sm">
+          {FEATURE_SECTIONS.map(section => (
+            <li
+              key={section.title}
+              className="flex gap-2.5"
+            >
+              <span
+                aria-hidden="true"
+                className="flex h-6 w-6 shrink-0 items-center justify-center text-base leading-none"
+              >
+                {section.icon}
+              </span>
+              <p className="text-slate-400">
+                <span className="mr-2 font-semibold text-slate-100">{section.title}</span>
+                {section.items.join(' · ')}
+              </p>
+            </li>
+          ))}
+        </ul>
       </header>
 
       {loading ? (

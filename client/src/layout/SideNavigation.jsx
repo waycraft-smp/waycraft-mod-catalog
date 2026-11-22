@@ -111,7 +111,7 @@ export default function SideNavigation({ mods, selectedCategory, onSelectCategor
       <div className="px-5 pt-5 md:hidden">
         <CategoryPanel {...panelProps} />
       </div>
-      <aside className="sticky top-16 hidden h-[calc(100vh-4rem)] w-64 shrink-0 overflow-y-auto bg-neutral-950/35 px-4 py-7 backdrop-blur-xl md:block">
+      <aside className="sticky top-16 hidden h-[calc(100vh-4rem)] w-64 shrink-0 overflow-y-auto bg-neutral-950/35 px-4 pt-8 pb-7 backdrop-blur-xl md:block">
         <CategoryPanel {...panelProps} />
       </aside>
     </>

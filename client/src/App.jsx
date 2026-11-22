@@ -15,7 +15,7 @@ export default function App() {
           selectedCategory={selectedCategory}
           onSelectCategory={setSelectedCategory}
         />
-        <main className="min-w-0 flex-1 bg-neutral-900/50 px-5 pb-12 pt-7 text-slate-100 backdrop-blur-2xl sm:px-8 sm:pt-10 lg:px-10">
+        <main className="min-w-0 flex-1 bg-neutral-900/50 px-5 pb-12 pt-7 text-slate-100 backdrop-blur-2xl sm:px-8 sm:pt-6 lg:px-10">
           <PageRunningmod mods={mods} selectedCategory={selectedCategory} />
         </main>
       </div>
