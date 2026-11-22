@@ -1,152 +1,127 @@
 # Waycraft SMP — Running Mods
 
-A web-based catalog of all mods included in the Waycraft SMP modpack, automatically generated using AutoMod and Modrinth metadata.
+A web catalog of the mods included in the Waycraft SMP modpack. **AutoMod** generates the catalog from Minecraft JAR files, and the **Client** displays it.
 
-## Project structure
+## Folders
 
-This project consists of two components:
-
-- **AutoMod** — Scans Minecraft JAR files, retrieves project metadata from Modrinth, and generates the mod catalog.
-- **Client** — A responsive website that displays the catalog, organized by categories and tags.
+- **AutoMod** (`automod/`) — Scans mods, retrieves metadata from Modrinth, and generates `output/mods.json`.
+- **Client** (`client/`) — Displays the catalog as a responsive website, with navigation generated from mod tags.
 
 ---
 
-# AutoMod
+## AutoMod
 
-A command-line tool for generating mod metadata from Minecraft JAR files.
-
-## Requirements
+### Requirements and installation
 
 - [Node.js](https://nodejs.org/) 18 or later.
 - Internet connection.
 
-## Installation
-
-Open the `automod` folder in PowerShell:
+In PowerShell, open `automod/` and install the dependencies:
 
 ```powershell
-npm.cmd install
+npm install
 ```
 
-## Usage
+### Run a scan
 
-Run AutoMod:
+From `automod/`, run:
 
 ```powershell
-npm.cmd start
+npm start
 ```
 
-Enter your Minecraft mods folder when prompted. The last scanned path is saved locally in `data/last-folder.txt`. Press Enter to reuse it.
-
-Alternatively, provide the path directly:
+Enter the Minecraft mods folder when prompted. AutoMod saves the last scanned path in `data/last-folder.txt`; press Enter to reuse it. You can also pass a path directly:
 
 ```powershell
-npm.cmd start -- "C:\path\to\mods"
+npm start -- "C:\path\to\mods"
 ```
 
-AutoMod scans the selected folder and its subfolders, retrieves available metadata, processes tags, and generates:
+AutoMod scans the folder and its subfolders, retrieves available metadata, processes tags and environments, and writes the catalog to `automod/output/mods.json`.
 
-`automod/output/mods.json`
+### Catalog data
 
-## Output format
+Each catalog entry can contain:
 
-Each entry can contain:
-
-| Field | Description |
-| --- | --- |
-| `id` | Mod ID. |
-| `name` | Project name. |
-| `description` | Project or local JAR description. |
-| `url` | Project page or local link. |
-| `iconUrl` | Project icon URL. |
+| Field                   | Description                                 |
+| ----------------------- | ------------------------------------------- |
+| `id`                    | Mod ID.                                     |
+| `name`                  | Project name.                               |
+| `description`           | Project or local JAR description.           |
+| `url`                   | Project page or local link.                 |
+| `iconUrl`               | Project icon URL.                           |
 | `supportedEnvironments` | Detected or manually assigned environments. |
-| `tags` | Modrinth categories and manual tags. |
+| `tags`                  | Modrinth categories and manual tags.        |
 
-Results with unclassified environments appear first. Within each environment group, untagged entries appear before tagged ones; remaining entries are ordered by environment, tag priority, and ID. `library` and `waycraft` have special tag-sorting priority.
+Entries with unclassified environments appear first. Within each environment group, untagged entries appear before tagged ones. Remaining entries are ordered by environment, tag priority, and ID; `library` and `waycraft` have special tag-sorting priority.
 
-## Manual tags
+### Manual metadata
 
-Edit `automod/data/addTagsManual.json` to assign additional tags:
-
-```json
-{
-  "bobby-mod": ["utility", "optimization"],
-}
-```
-
-Manual tags are merged with Modrinth categories, not replaced by them.
-
-Available categories are based on Modrinth tags found in the catalog. `waycraft` is a custom tag for recognized Waycraft projects.
-
-## Manual supported environments
-
-When AutoMod cannot determine a mod's environment from its JAR metadata, it keeps the mod in `output/mods.json` with `supportedEnvironments: ["unknown"]` and, when the mod has an ID, adds it to `data/addSupportedEnvironmentsManual.json` with an empty array.
-
-Fill in the array with `"client"`, `"server"`, or both, then run AutoMod again:
+Available tags for `addTagsManual.json and addSupportedEnvironmentsManual.json` (use the tags that apply to each mod; do not leave the list empty):
 
 ```json
 {
-  "client-only-mod": ["client"],
-  "server-only-mod": ["server"],
-  "both-sides-mod": ["client", "server"]
+  "addTagsManual.json": [
+    "adventure", "cursed", "decoration", "economy",
+    "equipment", "food", "game-mechanics", "library",
+    "magic", "management", "mobs", "optimization",
+    "social", "storage", "technology", "transportation",
+    "utility", "waycraft", "worldgen"
+  ]
 }
 ```
 
-An empty array means the environment is still pending, so the mod remains in the output as `"unknown"`. Manual values apply only when the JAR metadata does not already identify an environment.
-
-## Project structure
-
-- `src/cli/` — Command-line interface and output.
-- `src/analyzer/` — JAR analysis, metadata processing, tags, and sorting.
-- `src/services/` — Modrinth API integration.
-- `data/addTagsManual.json` — Manual tags, tracked by Git.
-- `data/addSupportedEnvironmentsManual.json` — Manual environments for mods without detectable JAR metadata.
-- `data/last-folder.txt` — Last scanned path, ignored by Git.
-- `output/mods.json` — Generated catalog, tracked by Git.
-
----
-
-# Client
-
-A responsive web application that displays the Waycraft SMP mod catalog.
-
-Categories and navigation are generated dynamically from mod tags.
-
-## Requirements
-
-- [Node.js](https://nodejs.org/) 18 or later.
-- Internet connection to retrieve the catalog from GitHub.
-
-## Installation
-
-Open the `client` folder in PowerShell:
-
-```powershell
-npm.cmd install
+```json
+{
+  "addSupportedEnvironmentsManual.json": ["client", "server"]
+}
 ```
 
-## Development
 
-Start the development server:
+### Updating the catalog
 
-```powershell
-npm.cmd run dev
-```
-
-## Project structure
-
-- `src/layout/` — Header and category navigation.
-- `src/pages/runningmod/` — Mod list and cards.
-- `public/` — Site icon and static assets.
-
----
-
-# Updating the mod catalog
-
-AutoMod generates the catalog, while the Client retrieves it directly from the public GitHub repository.
-
-Whenever the mod list needs updating:
+AutoMod generates the catalog, and the Client retrieves it directly from the public GitHub repository. To update the mod list:
 
 1. Run AutoMod to generate the latest `automod/output/mods.json`.
 2. Review the generated data.
 3. Commit and push the updated JSON file to GitHub.
+
+Alternatively, run `update-catalog.bat` from the repository root. It reads the saved folder from `automod/data/last-folder.txt`, regenerates the catalog, and commits and pushes only `automod/output/mods.json` to `origin/main`. The local branch must be `main`, and GitHub authentication must already be configured.
+
+### AutoMod files
+
+- `src/cli/` — Command-line interface and output.
+- `src/analyzer/` — JAR analysis, metadata processing, tags, and sorting.
+- `src/services/` — Modrinth API integration.
+- `data/addTagsManual.json` — Manual tags (tracked by Git).
+- `data/addSupportedEnvironmentsManual.json` — Manual environments for mods without detectable JAR metadata.
+- `data/last-folder.txt` — Last scanned path (ignored by Git).
+- `output/mods.json` — Generated catalog (tracked by Git).
+
+---
+
+## Client
+
+### Requirements and installation
+
+- [Node.js](https://nodejs.org/) 18 or later.
+- Internet connection to retrieve the catalog from GitHub.
+
+In PowerShell, open `client/` and install the dependencies:
+
+```powershell
+npm install
+```
+
+### Development
+
+From `client/`, start the development server:
+
+```powershell
+npm run dev
+```
+
+### Client files
+
+- `src/layout/` — Header and category navigation.
+- `src/pages/runningmod/` — Mod list and cards.
+- `public/` — Site icon and static assets.
